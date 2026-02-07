@@ -12,5 +12,8 @@ jobs:
     - name: Build Dockerfile
       run: docker build -t myos .
 
+    - name: List Images
+      run: docker images
+
     - name: Run Docker
       run: docker run -v .:/myos --name myos localhost/myos:latest
