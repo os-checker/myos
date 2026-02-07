@@ -1,0 +1,11 @@
+[package]
+name = "myos"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies.ostd]
+version = "0.17.0"
+
+[workspace]
+exclude = ["target/osdk/base", "target/osdk/test-base"]
+members = ["mylib"]

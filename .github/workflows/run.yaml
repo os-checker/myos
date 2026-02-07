@@ -1,0 +1,16 @@
+name: Run myos
+
+on:
+  push:
+
+jobs:
+  run-myos:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Dockerfile
+      run: docker build -t myos .
+
+    - name: Run Docker
+      run: docker run -v .:/myos --name myos localhost/myos:latest
